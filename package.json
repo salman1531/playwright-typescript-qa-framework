@@ -1,0 +1,29 @@
+{
+  "name": "playwright-typescript-qa-framework",
+  "version": "1.0.0",
+  "description": "Portfolio-ready Playwright TypeScript framework for UI and API testing",
+  "private": true,
+  "scripts": {
+    "demo": "node demo/server.cjs",
+    "test": "playwright test",
+    "test:ui": "playwright test tests/ui",
+    "test:api": "playwright test tests/api --project=api",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:e2e": "playwright test --grep @e2e --project=chromium",
+    "test:cross-browser": "playwright test tests/ui",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:list": "playwright test --list",
+    "typecheck": "tsc --noEmit",
+    "report:html": "playwright show-report artifacts/html-report",
+    "allure:generate": "allure generate artifacts/allure-results --clean -o artifacts/allure-report",
+    "allure:open": "allure open artifacts/allure-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^22.0.0",
+    "allure": "^3.17.0",
+    "allure-playwright": "^3.12.1",
+    "dotenv": "^16.4.0",
+    "typescript": "^5.7.0"
+  }
+}

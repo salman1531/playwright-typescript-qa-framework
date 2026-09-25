@@ -1,0 +1,10 @@
+node_modules/
+.npm-cache/
+.env
+artifacts/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+*.log
+.DS_Store

@@ -10,5 +10,5 @@ test('@e2e completes a product checkout', async ({ loginPage, inventoryPage, che
   await test.step('Add a product to the cart', () => inventoryPage.addProduct(products.backpack.name));
   await test.step('Open the cart', () => inventoryPage.openCart());
   await test.step('Submit checkout details', () => checkoutPage.checkout(uniqueCustomer()));
-  await expect(page.getByText(products.backpack.name)).toBeVisible();
+  await expect(page.locator('#confirmed-item')).toHaveText(products.backpack.name);
 });
